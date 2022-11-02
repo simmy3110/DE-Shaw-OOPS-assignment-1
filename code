@@ -3,6 +3,31 @@ using namespace std;
 
 class Student
 {
+public:
+		string name;
+		int id;
+		string College_Name;
+	public:
+		//void getDetails();
+		//void setDetails();
+
+		void read() {
+      	//Get Input Values For Object Variables
+      		cout << "Enter Name: ";
+      		cin >> name;
+
+      		cout << "Enter Registration Number:";
+      		cin >> id;
+		
+			cout << "Enter College Name:";
+      		cin >> College_Name;
+		}
+		void print(){
+			//Show the Output
+      		cout << "Name :" << name << endl;
+      		cout << "Registration Number :" << id << endl;
+			cout << "College Name :" << College_Name << endl;
+		}
 
 };
 
