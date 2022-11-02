@@ -6,24 +6,36 @@ class Student
 
 };
 
-class participants
+class Participant
 {
 
 };
 
-class core_members
+class CoreMember
 {
 
 };
 
-class coordinators
+class Coordinator
 {
 
 };
 
-class workforce
-{
-
+class Workforce: public Student{
+private:
+	Coordinator coord_id;
+public:
+	// this constructor will take in a few more details after the student class is designed
+	Workforce(Coordinator coord, int s_id):Student(s_id){
+		coord_id = coord; 
+	}
+	Workforce():Student(){
+		;
+	}
+	void assign_coordinator(Coordinator coord){
+		coord_id = coord;
+	}
+	
 };
 
 int main()
