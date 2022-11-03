@@ -32,7 +32,7 @@ public:
 
 };
 
-class Participant
+class Participant: public Student
 {
 private:
 	vector<int> event_id;
@@ -80,26 +80,23 @@ private:
 	 vector<int> work_id;
  public:
 	 //with core id
-	 Coordinator(int core, int coordinate, string s_name, int s_id, string c_name):Student(name, id, college_n)
-	 {
+	 Coordinator(int core, int coordinate, string s_name, int s_id, string c_name):Student(s_name, s_id, c_name){
 		core_id= core;
 		coord_id= coordinate;
-	 }
+	}
 	 //wihtout core id
-	 Coordinator(int coordinate, string s_name, int s_id, string c_name):Student(name, id, college_n)
-	 {
+	 Coordinator(int coordinate, string s_name, int s_id, string c_name):Student(s_name, s_id, c_name){
 		coord_id= coordinate;
-	 }
-	 void add_work_force(int id)
-	 {
+	}
+	 void add_work_force(int id){
 		work_id.emplace_back(id);
-	 }
+	}
 
 	 int getcore_id()
-	 { return core_id; }
+	{ return core_id; }
 
 	 int getcoordinator_id()
-	 { return coord_id; }
+	{ return coord_id; }
 
 	 void assign_core_member(int core){
 			core_id = core;
@@ -108,24 +105,24 @@ private:
 
 class Workforce: public Student{
 private:
-	Coordinator coord_id;
+	Coordinator *coord_id;
 public:
 	// this constructor will take in a few more details after the student class is designed
-	Workforce(Coordinator coord, string name, int s_id, string c_name):Student(name, s_id, c_name){
+	Workforce(Coordinator *coord, string name, int s_id, string c_name):Student(name, s_id, c_name){
 		coord_id = coord; 
 	}
 	Workforce(string name, int s_id, string c_name):Student(name, s_id, c_name){
 		;
 	}
 
-	Workforce(Coordinator coord, Student s):Student(s.getName(), s.getID(), s.getCollege()){
+	Workforce(Coordinator *coord, Student s):Student(s.getName(), s.getID(), s.getCollege()){
 		coord_id = coord; 
 	}
 
 	Workforce(Student s):Student(s.getName(), s.getID(), s.getCollege()){
 		;
 	}
-	void assign_coordinator(Coordinator coord){
+	void assign_coordinator(Coordinator *coord){
 		coord_id = coord;
 	}
 	
