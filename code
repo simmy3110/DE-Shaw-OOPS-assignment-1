@@ -34,6 +34,32 @@ public:
 
 class Participant
 {
+private:
+	vector<int> event_id;
+        //query details
+        int dept_id;
+        string question;
+    public:
+        Participant(string name, int s_id, string c_name):Student(name, s_id, c_name){}
+        Participant(Student s):Student(s.getName(), s.getID(), s.getCollege()){}
+
+        void addEvent(int id){
+            event_id.push_back(id);
+        }
+        void getEvents(){
+            cout << "The IDs of the events you are participating in are:\n";
+            for(int i : event_id)
+                cout << i << " ";
+            cout << endl;
+        }
+        void setQueryDetails(int id, string ques){
+            dept_id = id;
+            question = ques;
+        }
+        void getQueryDetails(){
+            cout << "Department ID: " << dept_id << endl;
+            cout << "Question: " << question <<endl;
+        }
 
 };
 
