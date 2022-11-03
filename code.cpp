@@ -63,9 +63,14 @@ private:
 
 };
 
-class CoreMember
+class CoreMember:public Student
 {
-
+	public:
+	vector<Coordinator> coordinators;
+	int dept_id;
+	CoreMember(int dept){
+		dept_id = dept;
+	}
 };
 
 class Coordinator: public Student {
