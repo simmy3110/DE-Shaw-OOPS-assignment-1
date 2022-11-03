@@ -1,33 +1,55 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 class Student
 {
+private:
+	string name;
+	int id;
+	string College_Name;
+
 public:
-		string name;
-		int id;
-		string College_Name;
-	public:
-		//void getDetails();
-		//void setDetails();
+	Student(string s_name, int s_id, string c_name): name(s_name), id(s_id), College_Name(c_name){
+		;
+	}
+	void getDetails(){
+		cout << "Student Name: " << name << endl;
+  		cout << "Student ID: " << id << endl;
+		cout << "College Name: " << College_Name << endl;
+	}
 
-		void read() {
-      	//Get Input Values For Object Variables
-      		cout << "Enter Name: ";
-      		cin >> name;
+	string getName(){
+		return name;
+	}
 
-      		cout << "Enter Registration Number:";
-      		cin >> id;
-		
-			cout << "Enter College Name:";
-      		cin >> College_Name;
-		}
-		void print(){
-			//Show the Output
-      		cout << "Name :" << name << endl;
-      		cout << "Registration Number :" << id << endl;
-			cout << "College Name :" << College_Name << endl;
-		}
+	int getID(){
+		return id;
+	}
+
+	string getCollege(){
+		return College_Name;
+	}
+
+// 	//void getDetails();
+// 	//void setDetails();
+
+// 	void read() {
+//   	//Get Input Values For Object Variables
+//   		cout << "Enter Name: ";
+//   		cin >> name;
+
+//   		cout << "Enter Registration Number:";
+//   		cin >> id;
+	
+// 		cout << "Enter College Name:";
+//   		cin >> College_Name;
+// 	}
+	// void print(){
+	// 	//Show the Output
+ //  		cout << "Name :" << name << endl;
+ //  		cout << "Registration Number :" << id << endl;
+	// 	cout << "College Name :" << College_Name << endl;
+	// }
 
 };
 
@@ -51,10 +73,18 @@ private:
 	Coordinator coord_id;
 public:
 	// this constructor will take in a few more details after the student class is designed
-	Workforce(Coordinator coord, int s_id):Student(s_id){
+	Workforce(Coordinator coord, string name, int s_id, string c_name):Student(name, s_id, c_name){
 		coord_id = coord; 
 	}
-	Workforce():Student(){
+	Workforce(string name, int s_id, string c_name):Student(name, s_id, c_name){
+		;
+	}
+
+	Workforce(Coordinator coord, Student s):Student(s.getName(), s.getID(), s.getCollege()){
+		coord_id = coord; 
+	}
+
+	Workforce(Student s):Student(s.getName(), s.getID(), s.getCollege()){
 		;
 	}
 	void assign_coordinator(Coordinator coord){
@@ -65,6 +95,8 @@ public:
 
 int main()
 {
-
-    return 0;
+	Student s("avantika", 1, "iiitb");
+	Workforce w(s);
+	w.getDetails();
+	return 0;
 }
