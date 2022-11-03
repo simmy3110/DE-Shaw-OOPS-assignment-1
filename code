@@ -30,27 +30,6 @@ public:
 		return College_Name;
 	}
 
-// 	//void getDetails();
-// 	//void setDetails();
-
-// 	void read() {
-//   	//Get Input Values For Object Variables
-//   		cout << "Enter Name: ";
-//   		cin >> name;
-
-//   		cout << "Enter Registration Number:";
-//   		cin >> id;
-	
-// 		cout << "Enter College Name:";
-//   		cin >> College_Name;
-// 	}
-	// void print(){
-	// 	//Show the Output
- //  		cout << "Name :" << name << endl;
- //  		cout << "Registration Number :" << id << endl;
-	// 	cout << "College Name :" << College_Name << endl;
-	// }
-
 };
 
 class Participant
@@ -63,9 +42,37 @@ class CoreMember
 
 };
 
-class Coordinator
-{
+class Coordinator: public Student {
+private:
+	 int core_id;
+	 int coord_id;
+	 vector<int> work_id;
+ public:
+	 //with core id
+	 Coordinator(int core, int coordinate, string s_name, int s_id, string c_name):Student(name, id, college_n)
+	 {
+		core_id= core;
+		coord_id= coordinate;
+	 }
+	 //wihtout core id
+	 Coordinator(int coordinate, string s_name, int s_id, string c_name):Student(name, id, college_n)
+	 {
+		coord_id= coordinate;
+	 }
+	 void add_work_force(int id)
+	 {
+		work_id.emplace_back(id);
+	 }
 
+	 int getcore_id()
+	 { return core_id; }
+
+	 int getcoordinator_id()
+	 { return coord_id; }
+
+	 void assign_core_member(int core){
+			core_id = core;
+		}
 };
 
 class Workforce: public Student{
