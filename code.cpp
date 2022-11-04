@@ -1,4 +1,9 @@
 #include<bits/stdc++.h>
+#include "coordinator.h"
+#include "student.h"
+#include "participant.h"
+#include "core_member.h"
+
 using namespace std;
 
 class Student
@@ -32,76 +37,8 @@ public:
 
 };
 
-class Participant: public Student
-{
-private:
-	vector<int> event_id;
-        //query details
-        int dept_id;
-        string question;
-    public:
-        Participant(string name, int s_id, string c_name):Student(name, s_id, c_name){}
-        Participant(Student s):Student(s.getName(), s.getID(), s.getCollege()){}
 
-        void addEvent(int id){
-            event_id.push_back(id);
-        }
-        void getEvents(){
-            cout << "The IDs of the events you are participating in are:\n";
-            for(int i : event_id)
-                cout << i << " ";
-            cout << endl;
-        }
-        void setQueryDetails(int id, string ques){
-            dept_id = id;
-            question = ques;
-        }
-        void getQueryDetails(){
-            cout << "Department ID: " << dept_id << endl;
-            cout << "Question: " << question <<endl;
-        }
 
-};
-
-class CoreMember:public Student
-{
-	public:
-	vector<Coordinator> coordinators;
-	int dept_id;
-	CoreMember(int dept){
-		dept_id = dept;
-	}
-};
-
-class Coordinator: public Student {
-private:
-	 int core_id;
-	 int coord_id;
-	 vector<int> work_id;
- public:
-	 //with core id
-	 Coordinator(int core, int coordinate, string s_name, int s_id, string c_name):Student(s_name, s_id, c_name){
-		core_id= core;
-		coord_id= coordinate;
-	}
-	 //wihtout core id
-	 Coordinator(int coordinate, string s_name, int s_id, string c_name):Student(s_name, s_id, c_name){
-		coord_id= coordinate;
-	}
-	 void add_work_force(int id){
-		work_id.emplace_back(id);
-	}
-
-	 int getcore_id()
-	{ return core_id; }
-
-	 int getcoordinator_id()
-	{ return coord_id; }
-
-	 void assign_core_member(int core){
-			core_id = core;
-		}
-};
 
 class Workforce: public Student{
 private:
