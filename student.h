@@ -2,19 +2,20 @@
 #define STUDENT
 
 #include<bits/stdc++.h>
+#include "person.h"
 using namespace std;
 
-class Student
+class Student : public Person
 {
 private:
-	string name;
 	int id;
-	string College_Name;
+	string college;
 
 public:
-	Student(string s_name, int s_id, string c_name);
-	void getDetails();
-	string getName();
+	Student(string name, int student_id, string college);
+	Student(string name, int age, int student_id, string college);
+
+	// getters
 	int getID();
 	string getCollege();
 };
