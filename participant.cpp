@@ -1,24 +1,35 @@
 #include <bits/stdc++.h>
 #include "participant.h";
+#include "student.h"
 
-Participant:: void addEvent(int id)
-{
-    event_ids.push_back(id);
-}
-Participant::vector<int> getEvents()
-{
-    return event_ids;
-}
-Participant::void setQueryDetails(int id, string ques)
-{
-    q_dept_id = id;
-    question = ques;
-}
-Participant::int getQueryDept()
+//constructors
+Participant::Participant(string name, int s_id, string c_name) : Student(name, s_id, c_name) {}
+Participant:: Participant(Student s) : Student(s.getName(), s.getID(), s.getCollege()) {}
+
+//getters
+int Participant::getQueryDept()
 {
     return q_dept_id;
 }
-Participant::string getQueryQuestion()
+
+string Participant::getQueryQuestion()
 {
     return question;
+}
+
+vector<int> Participant::getEvents()
+{
+    return event_ids;
+}
+
+//setters
+void Participant::addEvent(int id)
+{
+    event_ids.push_back(id);
+}
+
+void Participant::setQueryDetails(int id, string ques)
+{
+    q_dept_id = id;
+    question = ques;
 }
