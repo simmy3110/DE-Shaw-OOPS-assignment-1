@@ -7,7 +7,7 @@ Student::Student(string student_name, int age, int student_id, string college_na
 	id = student_id;
 	college = college_name;
 }
-Student:: Student(string student_name, int student_id, string college_name): Person(student_name, NULL){
+Student:: Student(string student_name, int student_id, string college_name): Person(student_name, 0){
 	id = student_id;
 	college = college_name;
 }

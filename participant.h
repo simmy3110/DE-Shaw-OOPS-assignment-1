@@ -1,3 +1,6 @@
+#ifndef PARTICIPANT
+#define PARTICIPANT
+
 #include<bits/stdc++.h>
 #include "student.h"
 using namespace std;
@@ -12,8 +15,8 @@ class Participant: public Student
         
     public:
         //constructors
-        Participant(string name, int s_id, string c_name):Student(name, s_id, c_name){}
-        Participant(Student s):Student(s.getName(), s.getID(), s.getCollege()){}
+        Participant(string name, int s_id, string c_name);
+        Participant(Student s);
 
         //getters
         int getQueryDept();
@@ -24,3 +27,5 @@ class Participant: public Student
         void addEvent(int id);
         void setQueryDetails(int id, string ques);
 };
+
+#endif

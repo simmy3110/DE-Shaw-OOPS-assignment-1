@@ -1,3 +1,6 @@
+#ifndef TEAM_MEMBER
+#define TEAM_MEMBER
+
 #include<bits/stdc++.h>
 #include "student.h"
 using namespace std;
@@ -25,3 +28,5 @@ public:
     void add_subordinate(int sub);
     void assign_superior(int sup);
 };
+
+#endif

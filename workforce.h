@@ -1,3 +1,5 @@
+#ifndef WORKFORCE
+#define WORKFORCE
 
 #include "team_member.h"
 using namespace std;
@@ -11,3 +13,5 @@ class Workforce: public TeamMember{
 
 		void assign_event(int event_id);
 };
+
+#endif

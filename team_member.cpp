@@ -8,7 +8,7 @@ TeamMember::TeamMember(string name, int student_id, string college, int member_I
     member_id = member_ID;
     dept_id = dept_ID;
     subordinates = {};
-    superior_id = NULL;
+    superior_id = 0;
 }
 TeamMember:: TeamMember(string name, int student_id, string college_name, int member_ID, int dept_ID, int superior_ID, vector<int>subordinates_): Student(name, student_id, college_name){
     member_id = member_ID;
@@ -20,7 +20,7 @@ TeamMember:: TeamMember(string name, int student_id, string college_name, int me
     member_id = member_ID;
     dept_id = dept_ID;
     subordinates = {};
-    superior_id = NULL;
+    superior_id = 0;
 }
 TeamMember:: TeamMember(string name, int student_id, string college_name, int member_ID, int dept_ID, int superior_ID): Student(name, student_id, college_name){
     member_id = member_ID;

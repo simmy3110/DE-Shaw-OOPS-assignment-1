@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "participant.h";
+#include "participant.h"
 #include "student.h"
 
 //constructors
