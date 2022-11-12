@@ -1,9 +1,10 @@
 #include<iostream>
 using namespace std;
 
-class Event{
+class Events{
     private:
-        int event_id;
+        static map<int, int> mapEvents;
     public:
-        int get_event();
+        static void add_event(int event_id, int member_id);
+        static int get_event_id(int member_id);
 };

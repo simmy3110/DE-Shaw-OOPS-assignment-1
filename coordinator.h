@@ -7,5 +7,6 @@ class Coordinator : public TeamMember
 public:
 	Coordinator(string student_name, int student_id, string college_name, int member_id, int dept_id, int superior, vector<int> subordinates);
 	Coordinator(string student_name, int student_id, string college_name, int member_id, int dept_id);
-	void get_events();
+	
+	vector<int> get_events();
 };

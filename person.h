@@ -1,6 +1,3 @@
-#ifndef PERSON
-#define PERSON
-
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -15,5 +12,3 @@ public:
 	int getAge();
 	string getName();
 };
-
-#endif

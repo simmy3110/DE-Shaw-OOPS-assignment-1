@@ -1,6 +1,3 @@
-#ifndef STUDENT
-#define STUDENT
-
 #include<bits/stdc++.h>
 #include "person.h"
 using namespace std;
@@ -20,4 +17,3 @@ public:
 	string getCollege();
 };
 
-#endif
