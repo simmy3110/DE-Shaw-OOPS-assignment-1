@@ -13,3 +13,9 @@ Identify the objects, methods and the relationship between them to define classe
 
 
 Note: Make appropriate assumptions wherever required.
+
+## Class Diagram
+
+![class_diagram](https://user-images.githubusercontent.com/62061749/201486733-bc5fd75a-dac1-4f7d-b6cb-8b2f333b8f88.png)
+1) The directions of the arrows depict class inheritance.
+2) The dotted lines represent a common static data member event being shared
