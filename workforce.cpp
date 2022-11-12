@@ -11,3 +11,6 @@ void Workforce:: assign_event(int event_ID){
     event_id = event_ID;
     Events::add_event(event_ID, get_member_id());
 }
+int Workforce:: get_event(){
+    return event_id;
+}

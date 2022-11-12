@@ -12,6 +12,7 @@ class Workforce: public TeamMember{
 		Workforce(string student_name, int student_id, string college_name, int member_id, int dept_id, int superior);
 
 		void assign_event(int event_id);
+		int get_event();
 };
 
 #endif

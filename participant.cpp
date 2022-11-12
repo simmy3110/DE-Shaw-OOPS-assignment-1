@@ -17,15 +17,15 @@ string Participant::getQueryQuestion()
     return question;
 }
 
-vector<int> Participant::getEvents()
+int Participant::getEvent()
 {
-    return event_ids;
+    return event_id;
 }
 
 //setters
 void Participant::addEvent(int id)
 {
-    event_ids.push_back(id);
+    event_id =id;
 }
 
 void Participant::setQueryDetails(int id, string ques)

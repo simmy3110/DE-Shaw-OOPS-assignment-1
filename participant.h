@@ -7,8 +7,7 @@ using namespace std;
 class Participant: public Student
 {
     private:
-	    vector<int> event_ids;
-
+        int event_id;
         //query details
         int q_dept_id;
         string question;
@@ -21,7 +20,7 @@ class Participant: public Student
         //getters
         int getQueryDept();
         string getQueryQuestion();
-        vector<int> getEvents();
+        int getEvent();
 
         //setters
         void addEvent(int id);
